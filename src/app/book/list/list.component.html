@@ -1,0 +1,25 @@
+<h2 class="text-center">List Book</h2>
+<span class="glyphicon-search"   ></span>
+<button class="btn btn-info" [routerLink]="'create'">Creat new book</button><br>
+<td style="color: #008b0e">Có {{books.length}} sách trong danh sách</td>
+<table class="table" border="2px" >
+  <tr style="background-color: #acaac1">
+    <th>#</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th colspan="2">Action</th>
+  </tr>
+  <tr *ngFor="let b of books">
+    <td>{{b.id}}</td>
+    <td><a [routerLink]="'view/' + b.id">{{b.title}}</a></td>
+    <td>{{b.author}}</td>
+    <td width="13%">
+      <button class="btn btn-primary" [routerLink]="'edit/' + b.id">Edit</button>
+      |
+      <button class="btn btn-danger" (click)="deleteBook(b.id)">Delete</button>
+    </td>
+  </tr>
+
+</table>
+
+

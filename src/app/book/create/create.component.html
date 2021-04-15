@@ -1,0 +1,22 @@
+<h2 class="text-center">Create Product</h2>
+<form (ngSubmit)="createNewBook()" class="col-md-6 offset-md-3">
+  <div class="form-group row">
+    <label class="col">
+      Title
+      <input name="title" [(ngModel)]="book.title" type="text" class="form-control">
+    </label>
+  </div>
+  <div class="form-group row">
+    <label class="col">
+      Author
+      <input name="author" [(ngModel)]="book.author" type="text" class="form-control">
+    </label>
+  </div>
+  <div class="form-group row">
+    <label class="col">
+      Description
+      <textarea name="description" [(ngModel)]="book.description" type="text" class="form-control"></textarea>
+    </label>
+  </div>
+  <button type="submit" class="btn btn-outline-dark">Create</button>
+</form>
